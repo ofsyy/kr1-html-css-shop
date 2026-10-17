@@ -484,6 +484,77 @@ a:focus-visible {
 
 
 /* ===============================
+   Самостоятельные доработки: отзывы, FAQ, кнопка «Наверх»
+   =============================== */
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.review {
+  padding: var(--space-md);
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-surface);
+}
+
+.review__text {
+  margin: 0 0 var(--space-sm);
+}
+
+.review__author {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.faq__item {
+  margin-bottom: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.faq__question {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.faq__answer {
+  margin: var(--space-sm) 0 0;
+  color: var(--color-muted);
+}
+
+.to-top {
+  position: fixed;                /* кнопка всегда в углу экрана */
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 20;                    /* поверх шапки и карточек */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  color: var(--color-white);
+  text-decoration: none;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
+.to-top:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary-dark);
+}
+
+.to-top:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+
+/* ===============================
    10. Липкая шапка и липкие фильтры
    =============================== */
 
