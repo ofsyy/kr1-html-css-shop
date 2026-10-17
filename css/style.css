@@ -188,6 +188,7 @@ a:focus-visible {
   color: var(--color-primary);
 }
 
+.breadcrumbs__link + .breadcrumbs__link::before,
 .breadcrumbs__current::before {
   content: " / ";
   color: var(--color-muted);
@@ -248,6 +249,7 @@ a:focus-visible {
 }
 
 .product-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -297,6 +299,16 @@ a:focus-visible {
 .product-card__button {
   margin-top: auto;
   align-self: flex-start;
+}
+
+.product-card__badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: 4px 8px;
+  color: var(--color-white);
+  background-color: var(--color-danger);
+  border-radius: var(--radius-sm);
 }
 
 
@@ -427,8 +439,52 @@ a:focus-visible {
 }
 
 
+.order-form--page {
+  max-width: 560px;
+}
+
+
 /* ===============================
-   9. Боковое меню, которое едет за экраном
+   9. Страница товара
+   =============================== */
+
+.product__image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.product__price {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.product-table {
+  width: 100%;
+  max-width: 560px;
+  border-collapse: collapse;
+}
+
+.product-table caption {
+  margin-bottom: var(--space-sm);
+  text-align: left;
+  font-weight: 700;
+}
+
+.product-table th,
+.product-table td {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.product-table th {
+  background-color: var(--color-surface);
+}
+
+
+/* ===============================
+   10. Боковое меню, которое едет за экраном
    =============================== */
 
 body {
@@ -442,6 +498,7 @@ body {
   grid-row: 1 / span 2;   /* занимает высоту main + footer */
   position: sticky;
   top: 0;                 /* прилипает к верху окна при прокрутке */
+  z-index: 10;
   align-self: start;
   min-height: 100vh;
   border-right: 1px solid var(--color-border);
@@ -453,7 +510,7 @@ main   { grid-column: 2; grid-row: 1; }
 
 
 /* ===============================
-   10. Адаптив: на узких экранах меню сверху
+   11. Адаптив: на узких экранах меню сверху
    =============================== */
 
 @media (max-width: 800px) {
