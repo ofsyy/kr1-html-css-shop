@@ -135,10 +135,12 @@ GitHub Pages: https://ofsyy.github.io/kr1-html-css-shop/
 
 - `position: relative` — карточка товара `product-card`;
 - `position: absolute` — бейдж «Скидка» `product-card__badge`;
-- `position: sticky` и `z-index` — боковое меню `site-header`.
+- `position: sticky` и `z-index` — шапка с меню `site-header`;
+- `position: sticky` — фильтры каталога `catalog-filters` фиксируются при прокрутке.
 
 ## Самостоятельные доработки
 
-- боковое меню, которое прилипает к экрану при прокрутке;
+- шапка с меню прилипает к верху экрана при прокрутке;
+- фильтры каталога фиксируются при прокрутке;
 - собственные изображения товаров;
 - каталог расширен до 6 товаров.
